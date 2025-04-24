@@ -14,9 +14,9 @@ async function loadEntries() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
 
-      // Extract the title (from <h3>) and body (from .body class)
+      // Extract the title (from <h3>) and body (from .post class)
       const title = doc.querySelector('h3')?.textContent || 'Untitled';
-      const body = doc.querySelector('.body')?.textContent || '';
+      const body = doc.querySelector('.post p')?.textContent || ''; // Grab the first <p> from the post body
 
       // Generate an excerpt by splitting the body and taking the first 3-4 lines
       const excerpt = body.split('\n').slice(0, 4).join(' ').trim();
