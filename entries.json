@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Entry 01",
+    "excerpt": "This is an excerpt for entry 01...",
+    "link": "entry_01.html"
+  },
+  {
+    "title": "Entry 02",
+    "excerpt": "This is an excerpt for entry 02...",
+    "link": "entry_02.html"
+  },
+  {
+    "title": "Entry 03",
+    "excerpt": "This is an excerpt for entry 03...",
+    "link": "entry_03.html"
+  }
+]
