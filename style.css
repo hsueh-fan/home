@@ -25,9 +25,9 @@ h4 {
   color: #555555;
   margin: 5px 0 5px 34px;
   padding:0 0 2px 0;
-  font: 9pt georgia;
-  font-weight: bold;
-  font-style: italic;
+  font: 9pt helvetica;
+  font-weight: normal;
+  font-style: normal;
 }
 h5{
 	background: inherit;
