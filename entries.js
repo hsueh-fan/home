@@ -1,44 +1,41 @@
 async function loadEntries() {
   const container = document.getElementById('archive-entries');
+  const numEntries = 100;
 
-  const entryFiles = [];
-  const numEntries = 100; // Assuming we might have up to 100 entries
+  // Generate file names first
+  const entryFileNames = Array.from({ length: numEntries }, (_, i) =>
+    `entry_${String(i + 1).padStart(2, '0')}.html`
+  );
 
-  for (let i = 1; i <= numEntries; i++) {
-    const entryFile = `entry_${String(i).padStart(2, '0')}.html`; // Dynamically generate entry filenames
-    try {
-      const res = await fetch(entryFile);
-      if (!res.ok) continue; // Skip this entry if it doesn't exist
-      const html = await res.text();
+  // Fetch all entry files in parallel
+  const fetchPromises = entryFileNames.map(file =>
+    fetch(file).then(res => res.ok ? res.text() : null).catch(() => null)
+  );
 
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
+  const results = await Promise.all(fetchPromises);
 
-      // Extract the title (from <h3>) and body (from .post class)
-      const title = doc.querySelector('h3')?.textContent || 'Untitled';
-      const body = doc.querySelector('.post p')?.textContent || ''; // Grab the first <p> from the post body
+  // Process fetched results
+  const entries = results.map((html, index) => {
+    if (!html) return null;
 
-      // Generate an excerpt by taking only the first paragraph
-      const excerpt = body.split('\n')[0].trim(); // Only the first paragraph (up to the first line break)
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const title = doc.querySelector('h3')?.textContent || 'Untitled';
+    const body = doc.querySelector('.post p')?.textContent || '';
+    const excerpt = body.split('\n')[0].trim();
 
-      // Create an entry element for each post
-      const entryElement = document.createElement('div');
-      entryElement.classList.add('entry');
-      entryElement.innerHTML = `
-        <h3><a href="${entryFile}">${title}</a></h3>
-        <p class="excerpt">${excerpt}...</p>
-        <p>&not; <a href="${entryFile}">read more</a></p>
-      `;
-      entryFiles.push(entryElement);  // Store the entry element to append later
-    } catch (err) {
-      console.error(`Failed to load ${entryFile}: ${err}`);
-    }
-  }
+    const entryElement = document.createElement('div');
+    entryElement.classList.add('entry');
+    entryElement.innerHTML = `
+      <h3><a href="${entryFileNames[index]}">${title}</a></h3>
+      <p class="excerpt">${excerpt}...</p>
+      <p>&not; <a href="${entryFileNames[index]}">read more</a></p>
+    `;
+    return entryElement;
+  }).filter(Boolean); // Remove nulls
 
-  // Reverse the order to show newest entries first
-  entryFiles.reverse().forEach(entryElement => {
-    container.appendChild(entryElement);  // Append the reversed entries to the page
-  });
+  // Append in reverse order (newest first)
+  entries.reverse().forEach(entry => container.appendChild(entry));
 }
 
 window.onload = loadEntries;
