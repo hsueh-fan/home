@@ -1,29 +1,34 @@
-// Function to load the entries dynamically from the JSON file
+const entryFiles = ['entry_01.html', 'entry_02.html', 'entry_03.html']; // Add more as you publish
+
 async function loadEntries() {
-  // Fetch the entries from the local JSON file
-  const response = await fetch('entries.json');
-  const entries = await response.json(); // Parse the JSON data
+  const container = document.getElementById('archive-entries');
 
-  // Get the container where you want to show the entries (e.g., a div with the ID 'archive-entries')
-  const archiveContainer = document.getElementById('archive-entries');
+  const entries = await Promise.all(
+    entryFiles.map(async (file) => {
+      const res = await fetch(file);
+      const html = await res.text();
 
-  // Loop through each entry and create HTML elements for them
-  entries.forEach(entry => {
-    // Create a new div for each entry
-    const entryElement = document.createElement('div');
-    entryElement.classList.add('entry'); // Adds 'col' class to the div (styling)
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
 
-    // Add HTML content for the entry (title, excerpt, and read more link)
-    entryElement.innerHTML = `
+      const title = doc.querySelector('h3')?.textContent || 'Untitled';
+      const excerpt = doc.querySelector('p')?.textContent || 'No excerpt available';
+
+      return { title, excerpt, link: file };
+    })
+  );
+
+  // Newest first
+  entries.reverse().forEach(entry => {
+    const el = document.createElement('div');
+    el.classList.add('entry');
+    el.innerHTML = `
       <h3><a href="${entry.link}">${entry.title}</a></h3>
       <p>${entry.excerpt}</p>
       <p>&not; <a href="${entry.link}">read more</a></p>
     `;
-
-    // Append the new entry to the container
-    archiveContainer.appendChild(entryElement);
+    container.appendChild(el);
   });
 }
 
-// Run the function when the page loads
 window.onload = loadEntries;
