@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>許雪凡</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+  <script>
+    // Password Protection Script
+    var password = "YOASOBI"; // Change this to your desired password
+    var userPassword = prompt("Enter the password to view this page:");
+
+    if (userPassword !== password) {
+        alert("Incorrect password! Access denied.");
+        window.location = "http://www.patience-is-a-virtue.org"; // Redirect to another page if incorrect
+    }
+  </script>
+</head>
+<body>
+  <div id="content">
+    <a href="index.html"> <h1>許雪凡</h1> </a>
+    <ul id="menu">
+      <li><a href="index.html">home</a></li>
+      <li><a href="archive.html">archive</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+
+    <!-- Entry Content -->
+    <div class="post">
+      <h3>This is another title</h3>
+      <p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus, nascetur ridiculus mus. This is the full content of the entry. Expand upon the information in this paragraph and add more paragraphs to describe the topic fully. blahblablahblah blah blah blah does this work i'm editinfg this later</p>
+      <!-- Add more content paragraphs as needed -->
+    </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <p>&copy; 2025 Kym Hsueh-Fan Verbree · All rights reserved.</p>
+  </div>
+</body>
+</html>
