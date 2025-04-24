@@ -4,22 +4,26 @@ async function loadEntries() {
   const entryFiles = [];
   const numEntries = 100; // Assuming we might have up to 100 entries
 
+  // Dynamically generate entry filenames from entry_01.html to entry_100.html
   for (let i = 1; i <= numEntries; i++) {
-    const entryFile = `entry_${String(i).padStart(2, '0')}.html`; // Dynamically generate entry filenames
+    const entryFile = `entry_${String(i).padStart(2, '0')}.html`; // Ensure filenames are in the format entry_01.html
+
     try {
       const res = await fetch(entryFile);
       if (!res.ok) continue; // Skip this entry if it doesn't exist
+
       const html = await res.text();
 
+      // Parse the HTML content of the entry
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
 
       // Extract the title (from <h3>) and body (from .post class)
       const title = doc.querySelector('h3')?.textContent || 'Untitled';
-      const body = doc.querySelector('.post p')?.textContent || ''; // Grab the first <p> from the post body
+      const body = doc.querySelector('.post p')?.textContent || ''; // Get the first paragraph of the body
 
       // Generate an excerpt by splitting the body and taking the first 3-4 lines
-      const excerpt = body.split('\n').slice(0, 4).join(' ').trim();
+      const excerpt = body.split('\n').slice(0, 4).join(' ').trim(); // Take first 3-4 lines
 
       // Create an entry element for each post
       const entryElement = document.createElement('div');
