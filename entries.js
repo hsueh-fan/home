@@ -11,7 +11,7 @@ async function loadEntries() {
   entries.forEach(entry => {
     // Create a new div for each entry
     const entryElement = document.createElement('div');
-    entryElement.classList.add('col'); // Adds 'col' class to the div (styling)
+    entryElement.classList.add('entry'); // Adds 'col' class to the div (styling)
 
     // Add HTML content for the entry (title, excerpt, and read more link)
     entryElement.innerHTML = `
