@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archief | 許雪凡</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+</head>
+<body>
+  <div id="content">
+    <h1>Archief</h1>
+    <ul id="menu">
+      <li><a href="index.html">home</a></li>
+      <li><a href="#">archive</a></li>
+      <li><a href="#">contact</a></li>
+    </ul>
+    <div id="archive-entries"></div>
+    <div id="footer">
+      <p>2025 &copy; <em>minimalistica</em> · Design: Luka Cvrk</p>
+    </div>
+  </div>
+
+  <script>
+    fetch('entries.json')
+      .then(res => res.json())
+      .then(entries => {
+        const container = document.getElementById('archive-entries');
+        entries.forEach
