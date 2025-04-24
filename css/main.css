@@ -114,18 +114,6 @@ h3 a {
   border-left: 1px solid #ddd;
 }
 
-/* Old .col class (deprecated, left in case needed)
-.col {
-  width: 290px;
-  margin: 0 40px 30px 0;
-  float: left;
-  font-size: .9em;
-}
-.col.last {
-  margin-right: 0;
-}
-*/
-
 /* Archive Page Styling */
 #archive-entries {
   display: flex;
@@ -152,6 +140,27 @@ h3 a {
 
 #archive-entries .entry h3 a:hover {
   color: #8F0000;
+}
+
+#archive-entries .entry p.excerpt {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Clear the layout to make sure entries are below the "Archief" heading */
+.post {
+  clear: both;
+}
+
+#archive-entries .entry {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+#archive-entries .entry h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 #archive-entries .entry p.excerpt {
