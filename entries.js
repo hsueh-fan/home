@@ -4,9 +4,8 @@ async function loadEntries() {
   const entryFiles = [];
   const numEntries = 100; // Assuming we might have up to 100 entries
 
-  // Dynamically generate entry filenames from entry_01.html to entry_100.html
   for (let i = 1; i <= numEntries; i++) {
-    const entryFile = `entry_${String(i).padStart(2, '0')}.html`; // Ensure filenames are in the format entry_01.html
+    const entryFile = `entry_${String(i).padStart(2, '0')}.html`; // Dynamically generate entry filenames
 
     try {
       const res = await fetch(entryFile);
@@ -18,19 +17,22 @@ async function loadEntries() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
 
-      // Extract the title (from <h3>) and body (from .post class)
+      // Extract the title (from <h3>) and the body text (from .post class)
       const title = doc.querySelector('h3')?.textContent || 'Untitled';
-      const body = doc.querySelector('.post p')?.textContent || ''; // Get the first paragraph of the body
+      const body = doc.querySelector('.post')?.textContent || ''; // Grab all text in the post
 
-      // Generate an excerpt by splitting the body and taking the first 3-4 lines
-      const excerpt = body.split('\n').slice(0, 4).join(' ').trim(); // Take first 3-4 lines
+      // Generate an excerpt by splitting the body into lines and taking the first few
+      const excerpt = body.split('\n').slice(0, 4).join(' ').trim(); // Get first 3-4 lines of text
+
+      // Ensure we have a proper excerpt (add '...' at the end if necessary)
+      const finalExcerpt = excerpt.length > 0 ? `${excerpt}...` : 'No excerpt available';
 
       // Create an entry element for each post
       const entryElement = document.createElement('div');
       entryElement.classList.add('entry');
       entryElement.innerHTML = `
         <h3><a href="${entryFile}">${title}</a></h3>
-        <p class="excerpt">${excerpt}...</p>
+        <p class="excerpt">${finalExcerpt}</p>
         <p>&not; <a href="${entryFile}">read more</a></p>
       `;
       entryFiles.push(entryElement);  // Store the entry element to append later
