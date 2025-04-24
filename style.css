@@ -1,7 +1,7 @@
 body{ margin:0 auto; padding:0;  background: url(images/body.gif) left top; font-style:normal; font-variant:normal; font-weight:normal; font-size:8pt; font-family:Verdana, arial, helvetica, sans-serif;}
 
 a { color: #105cb6;	 background: inherit; text-decoration:none;}
-a:hover { color: #883225; 	border-bottom: 1px dashed #883225; background:inherit; text-decoration: none;	}
+a:hover { color: #a11500; text-decoration: underline; }
 a:active { background:inherit;	color: #990000; text-decoration: none;}
 
 
