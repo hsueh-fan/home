@@ -5,26 +5,27 @@ a:hover { color: #a11500; text-decoration: underline; }
 a:active { background:inherit;	color: #990000; text-decoration: none;}
 
 
-h1{
-	background: inherit;
-    color: #af711e;
-  font: 16pt georgia,'Trebuchet MS', Verdana, Arial,Helvetica, sans-serif;
+h1 {
+  background: inherit;
+  color: #404040;
+  font: 16pt helvetica, arial, georgia, sans-serif;
 }
+
 
 
 h2, h3 {
   background: inherit;
-  color: #af711e;
+  color: #333333;
   margin: 30px 0 0 32px;
   padding:0 0 2px 0;
-  font: 16pt georgia,'Trebuchet MS', Verdana, Arial,Helvetica, sans-serif;
+  font: 16pt helvetica, arial, georgia, sans-serif;
 }
 h4 {
   background: inherit;
   color: #555555;
   margin: 5px 0 5px 34px;
   padding:0 0 2px 0;
-  font: 9pt verdana;
+  font: 9pt georgia;
   font-weight: bold;
   font-style: italic;
 }
