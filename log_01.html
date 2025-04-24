@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ut enim risus rhoncus | 許雪凡</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+  <script>
+    // Password Protection Script
+    const password = "YOASOBI";
+    const userPassword = sessionStorage.getItem("allowed") || prompt("Enter the password to view this page:");
 
+    if (userPassword !== password) {
+      alert("Incorrect password! Access denied.");
+      window.location.href = "http://www.patience-is-a-virtue.org";
+    } else {
+      sessionStorage.setItem("allowed", password);
+    }
+  </script>
+</head>
+<body>
+  <div id="content">
+    <ul id="menu">
+      <li><a href="index.html">home</a></li>
+      <li><a href="archive.html">archive</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+
+    <div class="post">
+      <h3>Ut enim risus rhoncus</h3>
+      <div class="body">
+        <p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus...</p>
+        <!-- More content paragraphs here -->
+      </div>
+    </div>
+
+    <div id="footer">
+      <p>&copy; 2025 Kym Hsueh-Fan Verbree · All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
