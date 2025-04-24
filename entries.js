@@ -12,7 +12,10 @@ async function loadEntries() {
       const doc = parser.parseFromString(html, 'text/html');
 
       const title = doc.querySelector('h3')?.textContent || 'Untitled';
-      const excerpt = doc.querySelector('p')?.textContent || 'No excerpt available';
+      const body = doc.querySelector('.body')?.textContent || '';  // Get the full body content
+
+      // Create an excerpt (first 3-4 lines of the body)
+      const excerpt = createExcerpt(body);
 
       return { title, excerpt, link: file };
     })
@@ -24,11 +27,18 @@ async function loadEntries() {
     el.classList.add('entry');
     el.innerHTML = `
       <h3><a href="${entry.link}">${entry.title}</a></h3>
-      <p>${entry.excerpt}</p>
+      <p class="excerpt">${entry.excerpt}</p>  <!-- Adding the excerpt class for styling -->
       <p>&not; <a href="${entry.link}">read more</a></p>
     `;
     container.appendChild(el);
   });
+}
+
+// Function to create an excerpt (first 3-4 lines of the body)
+function createExcerpt(body) {
+  const lines = body.split('\n');  // Split the body into lines
+  const excerptLines = lines.slice(0, 4);  // Get the first 4 lines (you can change this number if needed)
+  return excerptLines.join(' ') + '...';  // Join them back and add '...'
 }
 
 window.onload = loadEntries;
