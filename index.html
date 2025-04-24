@@ -4,6 +4,16 @@
 <title>Trinity Institute</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+   <script>
+        // Password Protection Script
+        var password = "YOASOBI"; // Change this to your desired password
+        var userPassword = prompt("Enter the password to view this page:");
+
+        if (userPassword !== password) {
+            alert("Incorrect password! Access denied.");
+            window.location = "http://www.patience-is-a-virtue.org"; // Redirect to another page if incorrect
+        }
+    </script>
 </head>
 <body>
 <div id="top"> </div>
@@ -87,7 +97,7 @@
   <br/>
   <br/>
   <div id="footer">
-    <p>© 2006 Your Institute Inc. All Rights Reserved. | info@yourdomain.org</p>
+    <p>Â© 2006 Your Institute Inc. All Rights Reserved. | info@yourdomain.org</p>
   </div>
 </div>
 </body>
