@@ -17,22 +17,29 @@
   </script>
 </head>
 <body>
+  <!-- Main Content -->
   <div id="content">
-    <h1>Archief</h1>
+    <!-- Top menu (same as before) -->
     <ul id="menu">
-    <li><a href="index.html">home</a></li> <!-- Link to the home page -->
-    <li><a href="archive.html">archive</a></li> <!-- Link to the archive page -->
-    <li><a href="contact.html">contact</a></li> <!-- Link to the contact page -->
-</ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Archive heading -->
+    <h1>Archive</h1>
+
+    <!-- Container where entries will be inserted dynamically -->
     <div id="archive-entries"></div>
-    <div id="footer">
-      <p>&copy; 2025 Kym Hsueh-Fan Verbree · All rights reserved.</p>
-    </div>
+
   </div>
 
-  <script>
-    fetch('entries.json')
-      .then(res => res.json())
-      .then(entries => {
-        const container = document.getElementById('archive-entries');
-        entries.forEach
+  <!-- Footer -->
+  <div id="footer">
+    <p>&copy; 2025 Kym Hsueh-Fan Verbree · All rights reserved.</p>
+  </div>
+
+  <!-- Include JavaScript to load entries -->
+  <script src="entries.js"></script>
+</body>
+</html>
