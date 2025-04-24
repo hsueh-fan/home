@@ -1,1 +1,57 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif; /* Set font to Helvetica */
+    background-color: #dddddd; /* Light grey background */
+    color: #333333; /* Dark grey text (almost black) */
+    padding: 20px;
+}
+
+header {
+    background-color: #4CAF50; /* Green header */
+    color: white; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50; /* Green footer */
+    color: white;
+}
+
+section {
+    margin-top: 30px;
+}
+
+article {
+    background-color: white; /* White background for entries */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Slight shadow for depth */
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #333333; /* Dark grey for subheadings */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6em; /* Improve readability with line height */
+}
 
