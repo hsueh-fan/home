@@ -1,44 +1,44 @@
-const entryFiles = ['entry_01.html', 'entry_02.html', 'entry_03.html']; // Add more as you publish
-
 async function loadEntries() {
   const container = document.getElementById('archive-entries');
 
-  const entries = await Promise.all(
-    entryFiles.map(async (file) => {
-      const res = await fetch(file);
+  const entryFiles = [];
+  const numEntries = 100; // Assuming we might have up to 100 entries
+
+  for (let i = 1; i <= numEntries; i++) {
+    const entryFile = `entry_${String(i).padStart(2, '0')}.html`; // Dynamically generate entry filenames
+    try {
+      const res = await fetch(entryFile);
+      if (!res.ok) continue; // Skip this entry if it doesn't exist
       const html = await res.text();
 
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
 
+      // Extract the title (from <h3>) and body (from .body class)
       const title = doc.querySelector('h3')?.textContent || 'Untitled';
-      const body = doc.querySelector('.body')?.textContent || '';  // Get the full body content
+      const body = doc.querySelector('.body')?.textContent || '';
 
-      // Create an excerpt (first 3-4 lines of the body)
-      const excerpt = createExcerpt(body);
+      // Generate an excerpt by splitting the body and taking the first 3-4 lines
+      const excerpt = body.split('\n').slice(0, 4).join(' ').trim();
 
-      return { title, excerpt, link: file };
-    })
-  );
+      // Create an entry element for each post
+      const entryElement = document.createElement('div');
+      entryElement.classList.add('entry');
+      entryElement.innerHTML = `
+        <h3><a href="${entryFile}">${title}</a></h3>
+        <p class="excerpt">${excerpt}...</p>
+        <p>&not; <a href="${entryFile}">read more</a></p>
+      `;
+      entryFiles.push(entryElement);  // Store the entry element to append later
+    } catch (err) {
+      console.error(`Failed to load ${entryFile}: ${err}`);
+    }
+  }
 
-  // Newest first
-  entries.reverse().forEach(entry => {
-    const el = document.createElement('div');
-    el.classList.add('entry');
-    el.innerHTML = `
-      <h3><a href="${entry.link}">${entry.title}</a></h3>
-      <p class="excerpt">${entry.excerpt}</p>  <!-- Adding the excerpt class for styling -->
-      <p>&not; <a href="${entry.link}">read more</a></p>
-    `;
-    container.appendChild(el);
+  // Reverse the order to show newest entries first
+  entryFiles.reverse().forEach(entryElement => {
+    container.appendChild(entryElement);  // Append the reversed entries to the page
   });
-}
-
-// Function to create an excerpt (first 3-4 lines of the body)
-function createExcerpt(body) {
-  const lines = body.split('\n');  // Split the body into lines
-  const excerptLines = lines.slice(0, 4);  // Get the first 4 lines (you can change this number if needed)
-  return excerptLines.join(' ') + '...';  // Join them back and add '...'
 }
 
 window.onload = loadEntries;
