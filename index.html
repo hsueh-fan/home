@@ -1,1 +1,43 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journal</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        // Password Protection Script
+        var password = "YourPassword"; // Change this to your desired password
+        var userPassword = prompt("Enter the password to view this page:");
+
+        if (userPassword !== password) {
+            alert("Incorrect password! Access denied.");
+            window.location = "https://www.example.com"; // Redirect to another page if incorrect
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Journal</h1>
+        <p>Latest Entries:</p>
+    </header>
+
+    <section>
+        <article>
+            <h2>Entry 1: My First Day</h2>
+            <p>This is my first journal entry. I’m learning how to build a website!</p>
+        </article>
+
+        <article>
+            <h2>Entry 2: Another Day</h2>
+            <p>Today, I learned more about HTML and CSS. It’s a fun journey!</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Journal</p>
+    </footer>
+</body>
+</html>
