@@ -74,8 +74,9 @@ h2 {
 }
 
 h3 {
+  font-family: General Sans
   font-size: 1.7em;
-  font-weight: normal;
+  font-weight: 700;
   margin: 0 0 20px;
 
   /* Optional fade-in */
