@@ -1,5 +1,11 @@
-/* Reset some default margin and padding */
-* {
+@font-face {
+  font-family: 'Gambetta';
+  src: url('/assets/fonts/Gambetta/Gambetta-Regular.woff2') format('woff2'), /* Modern browsers */
+       url('/assets/fonts/Gambetta/Gambetta-Regular.woff') format('woff');   /* Older browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
   margin: 0;
   padding: 0;
 }
