@@ -242,12 +242,14 @@ h3 a {
 }
 
 /* Footer Styles */
+/* Footer Styles */
 #footer {
   clear: both;
   border-top: 1px solid #ddd;
   padding: 20px 0;
   font-size: .9em;
   color: #999;
+  margin-top: 2.5rem;
 }
 
 /* Responsive Tweaks */
