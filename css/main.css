@@ -140,9 +140,9 @@ h3 a {
   float: left;
   margin: 0 0 0 20px;
   color: #888;
-  font-family: 'General Sans', Helvetica, sans-serif; /* ← Add this line */
-  font-weight: 400;
-  font-size: 1em;
+  font-family: 'General Sans', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 0.8em;
   transition: color 0.3s ease;
 }
 
