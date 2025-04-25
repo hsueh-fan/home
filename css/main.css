@@ -247,7 +247,6 @@ h3 a {
 }
 
 /* Footer Styles */
-/* Footer Styles */
 #footer {
   clear: both;
   border-top: 1px solid #ddd;
@@ -255,6 +254,14 @@ h3 a {
   font-size: .9em;
   color: #999;
   margin-top: 2.5rem;
+}
+
+.custom-divider {
+  width: 960px;
+  max-width: 100%;
+  margin: 3rem auto; /* Adds space above & below */
+  border: none;
+  border-top: 1px solid #ddd;
 }
 
 /* Responsive Tweaks */
