@@ -93,8 +93,10 @@ h1 {
 }
 
 h2 {
-  font-weight: normal;
-  font-size: 2.6em;
+  font-family: 'Gambetta', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.225em;
   padding: 0 0 10px;
   margin: 0 0 15px;
 
@@ -106,7 +108,7 @@ h2 {
 h3 {
   font-family: 'General Sans', Helvetica, sans-serif;
   font-size: 1.6em;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 0 20px;
 
   /* Optional fade-in */
