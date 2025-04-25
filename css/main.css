@@ -9,6 +9,7 @@ body {
   font: 100% Georgia, "Times New Roman", Serif;
   background: #fff;
   color: #777;
+  scroll-behavior: smooth; /* Smooth scrolling for anchors */
 }
 
 /* Link Styles */
@@ -38,6 +39,10 @@ h1 {
   font-style: normal;
   padding: 0 0 25px 10px;
   margin: 0 0 10px;
+
+  /* Added fade-in */
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
 }
 
 h2 {
@@ -45,12 +50,20 @@ h2 {
   font-size: 2.6em;
   padding: 0 0 10px;
   margin: 0 0 15px;
+
+  /* Added fade-in */
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
 }
 
 h3 {
   font-size: 1.7em;
   font-weight: normal;
   margin: 0 0 20px;
+
+  /* Optional fade-in */
+  animation: fadeIn 1.4s ease forwards;
+  opacity: 0;
 }
 
 h3 a {
@@ -78,6 +91,7 @@ h3 a {
   float: left;
   margin: 0 0 0 20px;
   color: #888;
+  transition: color 0.3s ease; /* Smoother hover */
 }
 
 #menu li a:hover {
@@ -91,6 +105,10 @@ h3 a {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   margin: 0 0 40px;
+
+  /* Fade-in */
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
 }
 
 .post .details {
@@ -129,6 +147,10 @@ h3 a {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 20px;
+
+  /* Fade-in */
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
 }
 
 #archive-entries .entry h3 {
@@ -149,37 +171,21 @@ h3 a {
   margin-bottom: 10px;
 }
 
-/* Clear the layout to make sure entries are below the "Archief" heading */
+/* Clear layout */
 .post {
   clear: both;
 }
 
-#archive-entries .entry {
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-}
-
-#archive-entries .entry h3 {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-
-#archive-entries .entry p.excerpt {
-  font-size: 1em;
-  margin-bottom: 10px;
-}
-
-/* For medium screens and larger (tablet+ and desktop), use multiple columns */
+/* Responsive Layout Adjustments */
 @media (min-width: 600px) {
   #archive-entries .entry {
-    width: 48%;  /* Two columns on medium screens */
+    width: 48%;
   }
 }
 
 @media (min-width: 1024px) {
   #archive-entries .entry {
-    width: 30%;  /* Three columns on large screens */
+    width: 30%;
   }
 }
 
@@ -192,7 +198,7 @@ h3 a {
   color: #999;
 }
 
-/* Media Queries for Responsiveness */
+/* Responsive Tweaks */
 @media (max-width: 960px) {
   #content {
     width: 90%;
@@ -254,4 +260,26 @@ h3 a {
   h3 {
     font-size: 1.4em;
   }
+}
+
+/* Fade-in Keyframes (added at end for animation support) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional: Parallax Section Style */
+#hero {
+  background-image: url('your-image.jpg'); /* Change this */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3em;
+  font-family: Georgia, serif;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
