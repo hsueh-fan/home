@@ -29,7 +29,7 @@ body {
   font-weight: 400;
   background: #fff;
   color: #777;
-  scroll-behavior: smooth; /* Smooth scrolling for anchors */
+  scroll-behavior: smooth;
 }
 
 /* Link Styles */
