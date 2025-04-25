@@ -186,6 +186,12 @@ h3 a {
   border-left: 1px solid #ddd;
 }
 
+/* Remove bottom border from the last post */
+.post:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2rem; /* Optional: adds space before footer */
+}
+
 /* Archive Page Styling */
 #archive-entries {
   display: flex;
