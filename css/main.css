@@ -6,13 +6,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'General Sans'; /* Name your font */
+  src: url('/assets/fonts/General Sans/GeneralSans-Semibold.woff2') format('woff2'), /* Modern browsers */
+       url('/assets/fonts/General Sans/GeneralSans-Semibold.woff') format('woff');   /* Older browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
   margin: 0;
   padding: 0;
 }
 
 /* General Body Styling */
 body {
-  font: 100% Helvetica, "Arial", Sans-Serif;
+  font-family: 'Gambetta', Georgia, serif;
   background: #fff;
   color: #777;
   scroll-behavior: smooth; /* Smooth scrolling for anchors */
