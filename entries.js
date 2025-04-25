@@ -29,4 +29,13 @@ async function loadEntries() {
     entryElement.innerHTML = `
       <h3><a href="${entryFileNames[index]}">${title}</a></h3>
       <p class="excerpt">${excerpt}...</p>
-      <p>&not; <a href="${entry
+      <p>&not; <a href="${entryFileNames[index]}">read more</a></p>
+    `;
+    return entryElement;
+  }).filter(Boolean); // Remove nulls
+
+  // Append in reverse order (newest first)
+  entries.reverse().forEach(entry => container.appendChild(entry));
+}
+
+window.onload = loadEntries;
