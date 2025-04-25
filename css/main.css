@@ -7,15 +7,41 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Gambetta';
+  src: url('../assets/fonts/Gambetta/Gambetta-Italic.woff2') format('woff2'),
+       url('../assets/fonts/Gambetta/Gambetta-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gambetta';
+  src: url('../assets/fonts/Gambetta/Gambetta-Medium.woff2') format('woff2'),
+       url('../assets/fonts/Gambetta/Gambetta-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'General Sans'; /* Name your font */
-  src: url('../assets/fonts/General Sans/GeneralSans-Semibold.woff2') format('woff2'), /* Modern browsers */
-       url('../assets/fonts/General Sans/GeneralSans-Semibold.woff') format('woff');   /* Older browsers */
+  src: url('../assets/fonts/General Sans/GeneralSans-Semibold.woff2') format('woff2'),
+       url('../assets/fonts/General Sans/GeneralSans-Semibold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 
+}
+
+@font-face {
+  font-family: 'General Sans'; /* Name your font */
+  src: url('../assets/fonts/General Sans/GeneralSans-Light.woff2') format('woff2'),
+       url('../assets/fonts/General Sans/GeneralSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 *{
@@ -79,7 +105,7 @@ h2 {
 
 h3 {
   font-family: 'General Sans', Helvetica, sans-serif;
-  font-size: 1.7em;
+  font-size: 1.6em;
   font-weight: 400;
   margin: 0 0 20px;
 
@@ -113,7 +139,10 @@ h3 a {
   float: left;
   margin: 0 0 0 20px;
   color: #888;
-  transition: color 0.3s ease; /* Smoother hover */
+  font-family: 'General Sans', Helvetica, sans-serif; /* ← Add this line */
+  font-weight: 400;
+  font-size: 1em;
+  transition: color 0.3s ease;
 }
 
 #menu li a:hover {
