@@ -134,6 +134,18 @@ h3 a {
   border-left: 1px solid #ddd;
 }
 
+/* Scroll Effects (Fade-in on scroll) */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Archive Page Styling */
 #archive-entries {
   display: flex;
@@ -174,19 +186,6 @@ h3 a {
 /* Clear layout */
 .post {
   clear: both;
-}
-
-/* Responsive Layout Adjustments */
-@media (min-width: 600px) {
-  #archive-entries .entry {
-    width: 48%;
-  }
-}
-
-@media (min-width: 1024px) {
-  #archive-entries .entry {
-    width: 30%;
-  }
 }
 
 /* Footer Styles */
@@ -262,24 +261,7 @@ h3 a {
   }
 }
 
-/* Fade-in Keyframes (added at end for animation support) */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* Optional: Parallax Section Style */
-#hero {
-  background-image: url('your-image.jpg'); /* Change this */
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 3em;
-  font-family: Georgia, serif;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
