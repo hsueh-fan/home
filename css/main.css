@@ -6,7 +6,7 @@
 
 /* General Body Styling */
 body {
-  font: 100% Georgia, "Times New Roman", Serif;
+  font: 100% Helvetica, "Arial", Sans-Serif;
   background: #fff;
   color: #777;
   scroll-behavior: smooth; /* Smooth scrolling for anchors */
