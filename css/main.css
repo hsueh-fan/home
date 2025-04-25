@@ -26,7 +26,7 @@
 /* General Body Styling */
 body {
   font-family: 'Gambetta', Georgia, serif;
-  font-size: 1.0em;
+  font-size: 1.3em;
   font-weight: 400;
   background: #fff;
   color: #777;
@@ -80,7 +80,7 @@ h2 {
 h3 {
   font-family: 'General Sans', Helvetica, sans-serif;
   font-size: 1.7em;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0 0 20px;
 
   /* Optional fade-in */
