@@ -9,7 +9,8 @@ body {
   font: 100% Georgia, "Times New Roman", Serif;
   background: #fff;
   color: #777;
-  scroll-behavior: smooth; /* Smooth scrolling for anchors */
+  scroll-behavior: smooth;
+  font-size: 1em; /* 16px base */
 }
 
 /* Link Styles */
@@ -24,7 +25,7 @@ a:hover {
 /* Paragraph Styling */
 p {
   line-height: 1.7em;
-  margin: 0 0 15px;
+  margin: 0 0 0.9375rem;
 }
 
 .x {
@@ -37,10 +38,8 @@ h1 {
   font-size: 2em;
   font-weight: normal;
   font-style: normal;
-  padding: 0 0 25px 10px;
-  margin: 0 0 10px;
-
-  /* Added fade-in */
+  padding: 0 0 1.5625rem 0.625rem;
+  margin: 0 0 0.625rem;
   animation: fadeIn 1s ease forwards;
   opacity: 0;
 }
@@ -48,10 +47,8 @@ h1 {
 h2 {
   font-weight: normal;
   font-size: 2.6em;
-  padding: 0 0 10px;
-  margin: 0 0 15px;
-
-  /* Added fade-in */
+  padding: 0 0 0.625rem;
+  margin: 0 0 0.9375rem;
   animation: fadeIn 1.2s ease forwards;
   opacity: 0;
 }
@@ -59,9 +56,7 @@ h2 {
 h3 {
   font-size: 1.7em;
   font-weight: normal;
-  margin: 0 0 20px;
-
-  /* Optional fade-in */
+  margin: 0 0 1.25rem;
   animation: fadeIn 1.4s ease forwards;
   opacity: 0;
 }
@@ -72,14 +67,14 @@ h3 a {
 
 /* Main Content Container */
 #content {
-  width: 960px;
-  margin: 40px auto;
+  width: 60rem;
+  margin: 2.5rem auto;
 }
 
 /* Menu Styles */
 #menu {
   float: right;
-  margin: 10px 10px 0 0;
+  margin: 0.625rem 0.625rem 0 0;
 }
 
 #menu li {
@@ -89,9 +84,9 @@ h3 a {
 
 #menu li a {
   float: left;
-  margin: 0 0 0 20px;
+  margin-left: 1.25rem;
   color: #888;
-  transition: color 0.3s ease; /* Smoother hover */
+  transition: color 0.3s ease;
 }
 
 #menu li a:hover {
@@ -101,36 +96,34 @@ h3 a {
 /* Post Layout */
 .post {
   clear: both;
-  padding: 30px 10px;
+  padding: 1.875rem 0.625rem;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  margin: 0 0 40px;
-
-  /* Fade-in */
+  margin-bottom: 2.5rem;
   animation: fadeIn 1s ease forwards;
   opacity: 0;
 }
 
 .post .details {
   float: left;
-  width: 250px;
+  width: 15.625rem;
 }
 
 .post .details .info {
-  font-size: .9em;
+  font-size: 0.9em;
   color: #999;
 }
 
 .post .details .info a {
   color: #777;
   border-bottom: 1px dotted #999;
-  padding: 3px 1px;
+  padding: 0.1875rem 0.0625rem;
 }
 
 .post .body {
   float: right;
-  width: 618px;
-  padding: 0 0 0 30px;
+  width: 38.625rem;
+  padding-left: 1.875rem;
   border-left: 1px solid #ddd;
 }
 
@@ -138,24 +131,22 @@ h3 a {
 #archive-entries {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1.25rem;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 #archive-entries .entry {
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 20px;
-
-  /* Fade-in */
+  margin-bottom: 1.25rem;
   animation: fadeIn 1s ease forwards;
   opacity: 0;
 }
 
 #archive-entries .entry h3 {
   font-size: 1.5em;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 #archive-entries .entry h3 a {
@@ -168,22 +159,17 @@ h3 a {
 
 #archive-entries .entry p.excerpt {
   font-size: 1.1em;
-  margin-bottom: 10px;
-}
-
-/* Clear layout */
-.post {
-  clear: both;
+  margin-bottom: 0.625rem;
 }
 
 /* Responsive Layout Adjustments */
-@media (min-width: 600px) {
+@media (min-width: 37.5rem) {
   #archive-entries .entry {
     width: 48%;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   #archive-entries .entry {
     width: 30%;
   }
@@ -193,26 +179,27 @@ h3 a {
 #footer {
   clear: both;
   border-top: 1px solid #ddd;
-  padding: 20px 0;
-  font-size: .9em;
+  padding: 1.25rem 0;
+  font-size: 0.9em;
   color: #999;
 }
 
 /* Responsive Tweaks */
-@media (max-width: 960px) {
+@media (max-width: 60rem) {
   #content {
     width: 90%;
-    margin: 20px auto;
+    margin: 1.25rem auto;
   }
 
   .post {
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
-    margin: 0 0 20px;
+    padding: 1.25rem 0;
+    margin-bottom: 1.25rem;
   }
 
-  .post .details, .post .body {
+  .post .details,
+  .post .body {
     width: 100%;
     float: none;
     border: none;
@@ -222,26 +209,26 @@ h3 a {
   h1 {
     float: none;
     text-align: center;
-    padding: 10px 0;
+    padding: 0.625rem 0;
     font-size: 2em;
   }
 
   #menu {
     float: none;
     text-align: center;
-    margin: 10px 0;
+    margin: 0.625rem 0;
   }
 
   #menu li a {
     float: none;
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 0.625rem;
   }
 
   .col {
     float: none;
     width: 100%;
-    margin: 0 0 30px 0;
+    margin-bottom: 1.875rem;
   }
 
   .col.last {
@@ -262,24 +249,14 @@ h3 a {
   }
 }
 
-/* Fade-in Keyframes (added at end for animation support) */
+/* Fade-in Keyframes */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Optional: Parallax Section Style */
-#hero {
-  background-image: url('your-image.jpg'); /* Change this */
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 3em;
-  font-family: Georgia, serif;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
