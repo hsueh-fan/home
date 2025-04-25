@@ -2,7 +2,7 @@
   font-family: 'Gambetta';
   src: url('../assets/fonts/gambetta/Gambetta-Regular.woff2') format('woff2'),
        url('../assets/fonts/gambetta/Gambetta-Regular.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -11,7 +11,7 @@
   font-family: 'General Sans'; /* Name your font */
   src: url('../assets/fonts/General Sans/GeneralSans-Semibold.woff2') format('woff2'), /* Modern browsers */
        url('../assets/fonts/General Sans/GeneralSans-Semibold.woff') format('woff');   /* Older browsers */
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -21,9 +21,9 @@
 
 /* General Body Styling */
 body {
-  font-family: 'Gambetta', serif;
+  font-family: 'Gambetta-Regular', serif;
   font-size: 1.0em;
-  font-weight: normal;
+  font-weight: 400;
   background: #fff;
   color: #777;
   scroll-behavior: smooth; /* Smooth scrolling for anchors */
