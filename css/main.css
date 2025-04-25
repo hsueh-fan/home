@@ -21,7 +21,9 @@
 
 /* General Body Styling */
 body {
-  font-family: 'Gambetta', Georgia, serif;
+  font-family: 'Gambetta', serif;
+  font-size: 1.0rem;
+  font-weight: normal;
   background: #fff;
   color: #777;
   scroll-behavior: smooth; /* Smooth scrolling for anchors */
